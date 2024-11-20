@@ -65,9 +65,9 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.__clientidsecretname__ }}
-          tenant-id: ${{ secrets.__tenantidsecretname__ }}
-          subscription-id: ${{ secrets.__subscriptionidsecretname__ }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_F221DD082EC24427B3468CE3BD2A72AD }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_041EE10DFAD848EC9CC60CD49FF1C719 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_C1D9D1EDE3BC43B690D0170A13069B41 }}
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v3
@@ -75,3 +75,4 @@ jobs:
         with:
           app-name: 'attack-simulation'
           slot-name: 'Production'
+          
